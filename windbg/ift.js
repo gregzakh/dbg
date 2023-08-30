@@ -13,7 +13,7 @@
  */
 function *GetInvertedFunctionTable(prefix = 'KeUser') {
   if (!host.currentSession.Attributes.Target.IsKernelTarget) {
-    host.diagnostics.debugLog('Error: invalid debugger environment.\n');
+    host.diagnostics.debugLog('Error: requires kernel mode debugger environment.\n');
     return;
   }
 
