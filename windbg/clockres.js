@@ -5,7 +5,7 @@ const log = x => host.diagnostics.debugLog(`${x}\n`);
  * Usage: .scriptload clockres.js
  *        !clockres
  */
-function *GetSystemTimerResolution() {
+function GetSystemTimerResolution() {
   if (!host.currentSession.Attributes.Target.IsKernelTarget) {
     log('Error: requires kernel mode debugger environment.');
     return;
