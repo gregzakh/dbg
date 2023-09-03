@@ -25,6 +25,6 @@ function GetFilterDrivers() {
 
 function initializeScript() {
   return [new host.functionAlias(GetFilterDrivers, 'fltdrv'),
-    new host.apiVersionSupport(1, 6)
+    new host.apiVersionSupport(1, 7)
   ];
 }
