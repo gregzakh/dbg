@@ -7,7 +7,7 @@ const cmd = x => host.namespace.Debugger.Utility.Control.ExecuteCommand(`!reg q 
  *        !ipreg
  */
 function *GetIpAddress() {
-  if (!host.currentSession.Attributes.Target.IsKenelTarget) {
+  if (!host.currentSession.Attributes.Target.IsKernelTarget) {
     log('Error: requires kernel mode debugger environment.');
     return;
   }
@@ -25,7 +25,7 @@ function *GetIpAddress() {
                 x => /servicename/i.test(x)).First().match(/\{.+\}/));
     let addr = cmd(`${nodes[0]}${nodes[2]}${guid}`).Where(
                                       x => /dhcpip/i.test(x)).First();
-    log(`${guid} : ${addr.slice(47)}`);
+    log(`${guid} : ${addr.match(/((\d+\.){3}\d+)/)[1]}`);
   }
 }
 
