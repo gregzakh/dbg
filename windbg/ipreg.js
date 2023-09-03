@@ -6,7 +6,7 @@ const cmd = x => host.namespace.Debugger.Utility.Control.ExecuteCommand(`!reg q 
  * Usage: .scriptload ipreg.js
  *        !ipreg
  */
-function *GetIpAddress() {
+function GetIpAddress() {
   if (!host.currentSession.Attributes.Target.IsKernelTarget) {
     log('Error: requires kernel mode debugger environment.');
     return;
