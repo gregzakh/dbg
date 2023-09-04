@@ -9,6 +9,11 @@ const lst = (x, y, z) => host.namespace.Debugger.Utility.Collections.FromListEnt
  *        !fltdrv
  */
 function GetFilterDrivers() {
+  if (!host.currentSession.Attributes.Target.IsKernelTarget) {
+    log('Error: requires kernel mode debugger environment.');
+    return;
+  }
+
   const globals = pnt(sym('FltGlobals'), 'GLOBALS');
   log(`Globals Address: ${globals.address}`);
 
