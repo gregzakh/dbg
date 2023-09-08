@@ -1,0 +1,141 @@
+{
+  "types": [
+    {"type": "uint8_t",  "name": "BYTE"},
+    {"type": "uint32_t", "name": "DWORD"},
+    {"type": "int32_t",  "name": "LONG"},
+    {"type": "uint64_t", "name": "ULONGLONG"},
+    {"type": "uint16_t", "name": "WORD"}
+  ],
+  "structs": [
+    {
+      "name": "IMAGE_DOS_HEADER",
+      "members": [
+        {"type": "WORD", "name": "e_magic"},
+        {"type": "WORD", "name": "e_cblp"},
+        {"type": "WORD", "name": "e_cp"},
+        {"type": "WORD", "name": "e_crlc"},
+        {"type": "WORD", "name": "e_cparhdr"},
+        {"type": "WORD", "name": "e_minalloc"},
+        {"type": "WORD", "name": "e_maxalloc"},
+        {"type": "WORD", "name": "e_ss"},
+        {"type": "WORD", "name": "e_sp"},
+        {"type": "WORD", "name": "e_csum"},
+        {"type": "WORD", "name": "e_ip"},
+        {"type": "WORD", "name": "e_cs"},
+        {"type": "WORD", "name": "e_lfarlc"},
+        {"type": "WORD", "name": "e_ovno"},
+        {"type": "WORD", "name": "e_res",  "arrsize": 4},
+        {"type": "WORD", "name": "e_oemid"},
+        {"type": "WORD", "name": "e_oeminfo"},
+        {"type": "WORD", "name": "e_res2", "arrsize": 10},
+        {"type": "LONG", "name": "e_lfanew"}
+      ]
+    },
+    {
+      "name": "IMAGE_FILE_HEADER",
+      "members": [
+        {"type": "WORD",  "name": "Machine"},
+        {"type": "WORD",  "name": "NumberOfSections"},
+        {"type": "DWORD", "name": "TimeDateStamp"},
+        {"type": "DWORD", "name": "PointerToSymbolTable"},
+        {"type": "DWORD", "name": "NumberOfSymbols"},
+        {"type": "WORD",  "name": "SizeOfOptionalHeader"},
+        {"type": "WORD",  "name": "Characteristics"}
+      ]
+    },
+    {
+      "name": "IMAGE_DATA_DIRECTORY",
+      "members": [
+        {"type": "DWORD", "name": "VirtualAddress"},
+        {"type": "DWORD", "name": "Size"}
+      ]
+    },
+    {
+      "name": "IMAGE_OPTIONAL_HEADER32",
+      "members": [
+        {"type": "WORD",  "name": "Magic"},
+        {"type": "BYTE",  "name": "MajorLinkerVersion"},
+        {"type": "BYTE",  "name": "MinorLinkerVersion"},
+        {"type": "DWORD", "name": "SizeOfCode"},
+        {"type": "DWORD", "name": "SizeOfInitializedData"},
+        {"type": "DWORD", "name": "SizeOfUninitializedData"},
+        {"type": "DWORD", "name": "AddressOfEntryPoint"},
+        {"type": "DWORD", "name": "BaseOfCode"},
+        {"type": "DWORD", "name": "BaseOfData"},
+        {"type": "DWORD", "name": "ImageBase"},
+        {"type": "DWORD", "name": "SectionAlignment"},
+        {"type": "DWORD", "name": "FileAlignment"},
+        {"type": "WORD",  "name": "MajorOperatingSystemVersion"},
+        {"type": "WORD",  "name": "MinorOperatingSystemVersion"},
+        {"type": "WORD",  "name": "MajorImageVersion"},
+        {"type": "WORD",  "name": "MinorImageVersion"},
+        {"type": "WORD",  "name": "MajorSubsystemVersion"},
+        {"type": "WORD",  "name": "MinorSubsystemVersion"},
+        {"type": "DWORD", "name": "Win32VersionValue"},
+        {"type": "DWORD", "name": "SizeOfImage"},
+        {"type": "DWORD", "name": "SizeOfHeaders"},
+        {"type": "DWORD", "name": "CheckSum"},
+        {"type": "WORD",  "name": "Subsystem"},
+        {"type": "WORD",  "name": "DllCharacteristics"},
+        {"type": "DWORD", "name": "SizeOfStackReserve"},
+        {"type": "DWORD", "name": "SizeOfStackCommit"},
+        {"type": "DWORD", "name": "SizeOfHeapReserve"},
+        {"type": "DWORD", "name": "SizeOfHeapCommit"},
+        {"type": "DWORD", "name": "LoaderFlags"},
+        {"type": "DWORD", "name": "NumberOfRvaAndSizes"},
+        {"type": "IMAGE_DATA_DIRECTORY", "name": "DataDirectory", "arrsize": 16}
+      ]
+    },
+    {
+      "name": "IMAGE_OPTIONAL_HEADER64",
+      "members": [
+        {"type": "WORD",  "name": "Magic"},
+        {"type": "BYTE",  "name": "MajorLinkerVersion"},
+        {"type": "BYTE",  "name": "MinorLinkerVersion"},
+        {"type": "DWORD", "name": "SizeOfCode"},
+        {"type": "DWORD", "name": "SizeOfInitializedData"},
+        {"type": "DWORD", "name": "SizeOfUninitializedData"},
+        {"type": "DWORD", "name": "AddressOfEntryPoint"},
+        {"type": "DWORD", "name": "BaseOfCode"},
+        {"type": "ULONGLONG", "name": "ImageBase"},
+        {"type": "DWORD", "name": "SectionAlignment"},
+        {"type": "DWORD", "name": "FileAlignment"},
+        {"type": "WORD",  "name": "MajorOperatingSystemVersion"},
+        {"type": "WORD",  "name": "MinorOperatingSystemVersion"},
+        {"type": "WORD",  "name": "MajorImageVersion"},
+        {"type": "WORD",  "name": "MinorImageVersion"},
+        {"type": "WORD",  "name": "MajorSubsystemVersion"},
+        {"type": "WORD",  "name": "MinorSubsystemVersion"},
+        {"type": "DWORD", "name": "Win32VersionValue"},
+        {"type": "DWORD", "name": "SizeOfImage"},
+        {"type": "DWORD", "name": "SizeOfHeaders"},
+        {"type": "DWORD", "name": "CheckSum"},
+        {"type": "WORD",  "name": "Subsystem"},
+        {"type": "WORD",  "name": "DllCharacteristics"},
+        {"type": "ULONGLONG", "name": "SizeOfStackReserve"},
+        {"type": "ULONGLONG", "name": "SizeOfStackCommit"},
+        {"type": "ULONGLONG", "name": "SizeOfHeapReserve"},
+        {"type": "ULONGLONG", "name": "SizeOfHeapCommit"},
+        {"type": "DWORD", "name": "LoaderFlags"},
+        {"type": "DWORD", "name": "NumberOfRvaAndSizes"},
+        {"type": "IMAGE_DATA_DIRECTORY", "name": "DataDirectory", "arrsize": 16}
+      ]
+    },
+    {
+      "name": "IMAGE_NT_HEADERS32",
+      "members": [
+        {"type": "DWORD", "name": "Signature"},
+        {"type": "IMAGE_FILE_HEADER", "name": "FileHeader"},
+        {"type": "IMAGE_OPTIONAL_HEADER32", "name": "OptionalHeader"}
+      ]
+    },
+    {
+      "name": "IMAGE_NT_HEADERS64",
+      "members": [
+        {"type": "DWORD", "name": "Signature"},
+        {"type": "IMAGE_FILE_HEADER", "name": "FileHeader"},
+        {"type": "IMAGE_OPTIONAL_HEADER64", "name": "OptionalHeader"}
+      ]
+    }
+  ]
+}
