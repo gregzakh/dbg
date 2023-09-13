@@ -1,7 +1,9 @@
 'use strict';
 
 const log = x => host.diagnostics.debugLog(`${x}\n`);
-
+/*
+ * Usage: .scriptrun wasm.js
+ */
 function invokeScript() {
   let mem = new WebAssembly.Memory({initial: 0x14}),
       ins = new WebAssembly.Instance(
